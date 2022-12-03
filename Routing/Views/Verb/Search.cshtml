@@ -1,0 +1,21 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        Routing demos
+        @{
+            using (Html.BeginForm("Search", "Verb", FormMethod.Post))
+            {
+                @Html.TextBox("query")
+                <input type="Submit" name="Submit" value="Submit" />
+            }
+            Html.EndForm();
+        }
+    </div>
+</div>
+
+

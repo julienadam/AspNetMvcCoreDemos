@@ -9,9 +9,15 @@ namespace Routing.Controllers
             return Content($"{nameof(ProductController)}/{nameof(Index)}");
         }
 
-        public IActionResult Search()
+        //public IActionResult Index(int? id)
+        //{
+        //    return Content($"{nameof(ProductController)}/{nameof(Index)}/{id}");
+        //}
+
+
+        public IActionResult Search(string id)
         {
-            return Content($"{nameof(ProductController)}/{nameof(Search)}");
+            return Content($"{nameof(ProductController)}/{nameof(Search)}/{id}");
         }
     }
 }

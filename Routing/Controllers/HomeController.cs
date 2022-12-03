@@ -23,10 +23,10 @@ public class HomeController : Controller
     {
         return Content("Params from home");
     }
-
-    public IActionResult Index()
+    
+    public IActionResult Index(int? id)
     {
-        return View();
+        return Content($"id = {id}");
     }
 
     public IActionResult Privacy()
