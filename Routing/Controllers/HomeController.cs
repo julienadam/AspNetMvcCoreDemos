@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
+using System.Globalization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing.Constraints;
 using Routing.Models;
 
 namespace Routing.Controllers;
@@ -38,5 +40,10 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    public IActionResult YearMonth(int year, int month)
+    {
+        return Content($"Year : {year}\nMonth : {month}");
     }
 }
