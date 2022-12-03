@@ -13,6 +13,17 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    public IActionResult Product()
+    {
+        return Content("Product from home");
+    }
+
+
+    public IActionResult Params()
+    {
+        return Content("Params from home");
+    }
+
     public IActionResult Index()
     {
         return View();
