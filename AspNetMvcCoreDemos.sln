@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Routing", "Routing\Routing.csproj", "{89E6D48D-F9A4-4FB0-B516-8B5411735238}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomImageResult", "CustomImageResult\CustomImageResult.csproj", "{74C8B22D-4109-4331-9DC3-13CAF9164E94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{89E6D48D-F9A4-4FB0-B516-8B5411735238}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89E6D48D-F9A4-4FB0-B516-8B5411735238}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89E6D48D-F9A4-4FB0-B516-8B5411735238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74C8B22D-4109-4331-9DC3-13CAF9164E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74C8B22D-4109-4331-9DC3-13CAF9164E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74C8B22D-4109-4331-9DC3-13CAF9164E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74C8B22D-4109-4331-9DC3-13CAF9164E94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
