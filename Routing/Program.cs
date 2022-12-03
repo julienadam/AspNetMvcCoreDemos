@@ -24,4 +24,10 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapControllerRoute(
+    name: "blog",
+    pattern: "blog/{slug?}",
+    defaults: new { controller = "Posts", action = "ViewPost"});
+
+
 app.Run();
