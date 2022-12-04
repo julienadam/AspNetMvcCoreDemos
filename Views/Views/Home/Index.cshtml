@@ -1,8 +1,149 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="jumbotron">
+    <h1>Razor Views</h1>
 </div>
+
+
+<H1>Static calls</H1>
+@{
+    int i2 = 10;
+    <h2>@i2</h2>
+
+    <h3>
+        <i>Today is @DateTime.Now.ToShortDateString()</i>
+    </h3>
+}
+
+<hr />
+
+<H1>Variables</H1>
+@{
+    var a = 42;
+    var b = 66;
+    var result = a + b;
+    <h2>@a + @b = @result</h2>
+}
+
+<hr />
+
+<H1>Text and markup inside Razor</H1>
+@{
+    var str = "Hello World";
+    <h3>@str</h3>
+    <span>This is Text inside Razor.</span>
+}
+
+<hr />
+
+<H1>Escaping</H1>
+@{
+    <h2>example@@foo.bar</h2>
+}
+
+<hr />
+
+<H1>For loop</H1>
+@{
+    for (int c = 0; c < 20; c++)
+    {
+        var color = (c * 10 % 256).ToString("x2");
+        <h3 style="color: #@color@color@color">Hello world</h3>
+    }
+}
+<hr />
+
+<H1>If / else</H1>
+
+@{
+    var q = Context.Request.Query["price"].ToString();
+    var price = q != "" ? int.Parse(q) : 0;
+    switch (price)
+    {
+        case > 30:
+            <h3>Price is Higher than 30.</h3>
+            break;
+        case 30:
+            <h3>Price is Equal to 30.</h3>
+            break;
+        default:
+            <h3>Price is Lower than 30.</h3>
+            break;
+    }
+}
+
+<H1>Switch / case</H1>
+
+@{
+    var s = DateTime.Now.DayOfWeek.ToString();
+
+    switch (s)
+    {
+        case "Saturday":
+        case "Sunday":
+            <strong>have a nice week-end</strong>
+            break;
+        case "Monday":
+        case "Tuesday":
+        case "Wednesday":
+        case "Thursday":
+        case "Friday":
+            <strong>have a nice day</strong>
+            break;
+        default:
+            <strong>Failure</strong>
+            break;
+    }
+}
+
+@*
+    // Comments
+    @{
+        /* C# comment */
+        // Another C# comment
+    }
+    <!-- HTML comment -->
+*@
+
+@{
+    /* C# comment */
+    // Another C# comment
+}
+
+<!-- HTML comment -->
+
+
+<H1>Render partial without data</H1>
+@{
+    Html.RenderPartialAsync("Nyan");
+}
+<hr />
+
+<H1>Render partial with &lt;partial&gt; tag</H1>
+<partial name="Nyan"/>
+<hr />
+
+<H1>Render partial with data</H1>
+@{
+    Html.RenderPartialAsync("News/Ticker", "foo");
+}
+
+@*
+<hr />
+
+<H1>Render partial with string tweaking</H1>
+@{
+    var rendered = await Html.PartialAsync("Nyan");
+    
+    var replaced = rendered..Replace("nyan.png", "ninjanyan.jpg");
+    @Html.Raw(replaced)
+}
+
+<hr />
+
+<h1>Render action</h1>
+@{
+    Html.RenderAction("ServerInfo");
+}*@

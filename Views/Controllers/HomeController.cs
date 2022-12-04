@@ -13,14 +13,27 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public ActionResult Index()
     {
         return View();
     }
 
-    public IActionResult Privacy()
+    public ActionResult Privacy()
     {
         return View();
+    }
+
+    public ActionResult ServerInfo()
+    {
+        var serverInfo = new ServerInfoViewModel
+        {
+            Cores = Environment.ProcessorCount,
+            MachineName = Environment.MachineName,
+            OperatingSystem = Environment.OSVersion.ToString(),
+            CLRVersion = Environment.Version.ToString(),
+        };
+
+        return PartialView("ServerInfo/ServerInfo", serverInfo);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
