@@ -1,7 +1,10 @@
+using Views.Entities;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ChinookContext>();
 
 var app = builder.Build();
 

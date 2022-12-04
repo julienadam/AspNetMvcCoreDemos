@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Views.Entities;
 
@@ -17,6 +18,7 @@ public partial class Employee
 
     public DateTime? BirthDate { get; set; }
 
+    [DataType(DataType.Date)]
     public DateTime? HireDate { get; set; }
 
     public string? Address { get; set; }
