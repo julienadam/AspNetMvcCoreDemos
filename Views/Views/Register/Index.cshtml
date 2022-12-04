@@ -2,9 +2,34 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-controller="Register" asp-action="Index" method="post">
-            <label asp-for="Email" class="control-label"></label>: <input asp-for="Email" class="form-control" /> <br />
-            <label asp-for="Password" class="control-label"></label>: <input asp-for="Password" class="form-control" /><br />
+            <label asp-for="Email" class="control-label"></label>:
+            <input asp-for="Email" class="form-control" /> <br />
+            <label asp-for="Password" class="control-label"></label>:
+            <input asp-for="Password" class="form-control" /><br />
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
+    </div>
+</div>
+
+<hr/>
+
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("Index", "Register"))
+        {
+            @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+            <br />
+            @Html.EditorFor(m => m.Email, new { @class = "form-control" })
+
+            <br />
+            @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+
+            <br />
+            @Html.EditorFor(m => m.Password, new { @class = "form-control" })
+            <br />
+
+            <br />
+            <button type="submit" class="btn btn-primary">Register</button>
+        }
     </div>
 </div>
