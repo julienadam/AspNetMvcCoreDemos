@@ -1,0 +1,28 @@
+﻿@model VerifiedRegisterViewModel
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <form asp-controller="Register" asp-action="Index2" method="post">
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <label asp-for="Email" class="control-label"></label>:
+            <input asp-for="Email" class="form-control"/> <br/>
+            <span asp-validation-for="Birthday" class="text-danger"></span>
+            <label asp-for="Birthday" class="control-label"></label>:
+            <input asp-for="Birthday" class="form-control" /><br />
+            <span asp-validation-for="Password" class="text-danger"></span>
+            <label asp-for="Password" class="control-label"></label>:
+            <input asp-for="Password" class="form-control"/><br/>
+            <span asp-validation-for="PasswordVerification" class="text-danger"></span>
+            <label asp-for="PasswordVerification" class="control-label"></label>:
+            <input asp-for="PasswordVerification" class="form-control" /><br />
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}

@@ -1,0 +1,13 @@
+﻿@model ResetPasswordRequestViewModel
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <form asp-controller="Register" asp-action="ResetRequest" method="post">
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <label asp-for="Email" class="control-label"></label>:
+            <input asp-for="Email" class="form-control"/> <br/>
+            <button type="submit" class="btn btn-primary">Send me a reset email</button>
+        </form>
+    </div>
+</div>
