@@ -118,6 +118,9 @@
 
 <!-- HTML comment -->
 
+<H1>Partial tag without data</H1>
+<partial name="Nyan"/>
+<hr />
 
 <H1>Render partial without data</H1>
 @{
@@ -125,16 +128,20 @@
 }
 <hr />
 
-<H1>Render partial with &lt;partial&gt; tag</H1>
-<partial name="Nyan"/>
+@{
+    var newsData = "Partial tag !";
+}
+<H1>Partial tag with data</H1>
+<partial name="News/Ticker"  for="@newsData" />
+
 <hr />
 
 <H1>Render partial with data</H1>
 @{
-    await Html.RenderPartialAsync("News/Ticker", "foo");
+    await Html.RenderPartialAsync("News/Ticker", "Render partial");
 }
 
-<hr/>
+<hr />
 
 <h1>Custom tag helper from this project</h1>
 
