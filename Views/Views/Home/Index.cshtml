@@ -1,4 +1,8 @@
-﻿@{
+﻿@addTagHelper *, Views
+@addTagHelper *, TagHelperPack
+@addTagHelper *, Altairis.TagHelpers
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -117,7 +121,7 @@
 
 <H1>Render partial without data</H1>
 @{
-    Html.RenderPartialAsync("Nyan");
+    await Html.RenderPartialAsync("Nyan");
 }
 <hr />
 
@@ -127,8 +131,33 @@
 
 <H1>Render partial with data</H1>
 @{
-    Html.RenderPartialAsync("News/Ticker", "foo");
+    await Html.RenderPartialAsync("News/Ticker", "foo");
 }
+
+<hr/>
+
+<h1>Custom tag helper from this project</h1>
+
+<email mail-to="info"></email>
+
+<hr />
+
+<h1>Markdown tag helper from TagHelperPack</h1>
+<markdown>
+# Blah
+```C#
+public class Foo : IDisposable 
+{
+
+}
+```
+</markdown>
+
+
+<hr />
+
+<h1>Gravatar tag helper from Altairis.TagHelpers</h1>
+<gravatar email="joe@world.com"></gravatar>
 
 @*
 <hr />

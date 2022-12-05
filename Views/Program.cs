@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Views.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ChinookContext>();
+builder.Services.AddDbContext<ChinookContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Chinook")));
 
 var app = builder.Build();
 
