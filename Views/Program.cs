@@ -10,6 +10,7 @@ builder.Services.AddScoped<ChinookContext>();
 builder.Services.AddDbContext<ChinookContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Chinook")));
 builder.Services.AddSingleton<IWeatherService, BogusWeatherService>();
+builder.Services.AddSingleton<ProfileOptionsService>();
 
 var app = builder.Build();
 

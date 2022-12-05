@@ -15,7 +15,8 @@ namespace Views.Components
         public async Task<IViewComponentResult> InvokeAsync(string city)
         {
             var data = await weatherService.GetWeatherAsync(city);
-            return View("WeatherIndicator", data); // Ici WeatherIndicator.cshtml
+            // Vue Default.cshtml dans Shared/Components/WeatherIndicator
+            return View(data); 
         }
     }
 }

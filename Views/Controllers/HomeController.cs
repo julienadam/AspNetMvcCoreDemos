@@ -28,6 +28,12 @@ public class HomeController : Controller
         return View();
     }
 
+    public ActionResult InjectSample()
+    {
+        return View();
+    }
+
+
     public ActionResult WeatherSample(string id)
     {
         return View(new LocationViewModel { CurrentCity = id});
