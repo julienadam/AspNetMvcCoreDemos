@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+        <h2>Cookie</h2>
+        <p>
+            @(Context.Request.Cookies["CookieTest"] ?? "No cookie")
+        </p>
+
+    <h2>Change cookie value</h2>
+    <form asp-action="SetCookie" asp-controller="Home">
+        Cookie value : <input name="cookie_val" type="text" class="form-control"/><br/>
+        <input type="submit" value="Change" class="btn btn-primary"/>
+    </form>
+</div>
