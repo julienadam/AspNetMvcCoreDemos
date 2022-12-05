@@ -17,7 +17,17 @@ public class HomeController : Controller
     {
         return View();
     }
+    public ActionResult TestTempData1()
+    {
+        TempData["clé"] = 42;
+        return RedirectToAction("TestTempData2");
+    }
 
+    public ActionResult TestTempData2()
+    {
+        return Content(TempData["clé"]?.ToString() ?? "Pas de clé");
+    }
+    
     public IActionResult Privacy()
     {
         return View();
