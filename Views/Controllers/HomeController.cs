@@ -22,6 +22,10 @@ public class HomeController : Controller
     {
         return View();
     }
+    public ActionResult Index3()
+    {
+        return View();
+    }
 
     public ActionResult Privacy()
     {
