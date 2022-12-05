@@ -22,9 +22,15 @@ public class HomeController : Controller
     {
         return View();
     }
+
     public ActionResult Index3()
     {
         return View();
+    }
+
+    public ActionResult WeatherSample(string id)
+    {
+        return View(new LocationViewModel { CurrentCity = id});
     }
 
     public ActionResult Privacy()

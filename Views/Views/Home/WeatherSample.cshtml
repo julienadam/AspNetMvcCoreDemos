@@ -1,0 +1,6 @@
+﻿@addTagHelper *, Views
+@model LocationViewModel
+
+<vc:weather-indicator city="London"></vc:weather-indicator>
+<vc:weather-indicator city="Tokyo"></vc:weather-indicator>
+<vc:weather-indicator city="@Model.CurrentCity"></vc:weather-indicator>
