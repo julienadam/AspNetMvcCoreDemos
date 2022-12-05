@@ -1,13 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.Use(async (context, next) =>
-{
-    context.Items[0] = "From first";
-    Console.WriteLine("First middleware starting");
-    await next.Invoke();
-    Console.WriteLine("First middleware done");
-});
+// app.UseMiddleware<FirstMiddleware>();
+// Convention is to use an extension method instead of calling UseMiddleWare directly
+app.UseFirstMiddleware();
 
 app.Use(async (context, next) =>
 {

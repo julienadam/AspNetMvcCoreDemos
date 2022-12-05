@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Views", "Views\Views.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddlewareDemo", "MiddlewareDemo\MiddlewareDemo.csproj", "{30FB15EE-1114-459D-B4F0-2E5F3E3012B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddlewareDemo.Tests", "MiddlewareDemo.Tests\MiddlewareDemo.Tests.csproj", "{4DF08E25-15F3-44B3-9593-5BCE81D501BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{30FB15EE-1114-459D-B4F0-2E5F3E3012B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30FB15EE-1114-459D-B4F0-2E5F3E3012B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30FB15EE-1114-459D-B4F0-2E5F3E3012B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DF08E25-15F3-44B3-9593-5BCE81D501BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF08E25-15F3-44B3-9593-5BCE81D501BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF08E25-15F3-44B3-9593-5BCE81D501BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF08E25-15F3-44B3-9593-5BCE81D501BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
