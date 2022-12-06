@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using SecurityDemo.Models;
 
@@ -26,18 +27,21 @@ namespace SecurityDemo.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<AgeUser> _signInManager;
         private readonly UserManager<AgeUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IUserStore<AgeUser> _userStore;
         private readonly IUserEmailStore<AgeUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
-        public RegisterModel(
-            UserManager<AgeUser> userManager,
+        public RegisterModel(UserManager<AgeUser> userManager,
+            RoleManager<IdentityRole> roleManager,
             IUserStore<AgeUser> userStore,
             SignInManager<AgeUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender
+            )
         {
+            _roleManager = roleManager;
             _userManager = userManager;
             _userStore = userStore;
             _emailStore = GetEmailStore();
@@ -118,6 +122,11 @@ namespace SecurityDemo.Areas.Identity.Pages.Account
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
+                //if (await _userManager.Users.CountAsync() == 0)
+                //{
+                //    _logger.LogInformation("First user, adding to admin role.");
+                //    await _userManager.AddToRoleAsync(user, "Administrator");
+                //}
 
                 if (result.Succeeded)
                 {

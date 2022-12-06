@@ -25,6 +25,12 @@ public class HomeController : Controller
         return View();
     }
 
+    [Authorize(Roles = Roles.Administrator)]
+    public IActionResult Admin()
+    {
+        return View();
+    }
+
     public IActionResult Privacy()
     {
         return View();
