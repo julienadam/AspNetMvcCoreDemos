@@ -44,7 +44,6 @@ public partial class ChinookContext : DbContext
 
             entity.HasIndex(e => e.ArtistId, "IFK_AlbumArtistId");
 
-            entity.Property(e => e.AlbumId).ValueGeneratedNever();
             entity.Property(e => e.Title).HasMaxLength(160);
 
             entity.HasOne(d => d.Artist).WithMany(p => p.Albums)
@@ -57,7 +56,6 @@ public partial class ChinookContext : DbContext
         {
             entity.ToTable("Artist");
 
-            entity.Property(e => e.ArtistId).ValueGeneratedNever();
             entity.Property(e => e.Name).HasMaxLength(120);
         });
 
@@ -67,7 +65,6 @@ public partial class ChinookContext : DbContext
 
             entity.HasIndex(e => e.SupportRepId, "IFK_CustomerSupportRepId");
 
-            entity.Property(e => e.CustomerId).ValueGeneratedNever();
             entity.Property(e => e.Address).HasMaxLength(70);
             entity.Property(e => e.City).HasMaxLength(40);
             entity.Property(e => e.Company).HasMaxLength(80);
@@ -91,7 +88,6 @@ public partial class ChinookContext : DbContext
 
             entity.HasIndex(e => e.ReportsTo, "IFK_EmployeeReportsTo");
 
-            entity.Property(e => e.EmployeeId).ValueGeneratedNever();
             entity.Property(e => e.Address).HasMaxLength(70);
             entity.Property(e => e.BirthDate).HasColumnType("datetime");
             entity.Property(e => e.City).HasMaxLength(40);
@@ -115,7 +111,6 @@ public partial class ChinookContext : DbContext
         {
             entity.ToTable("Genre");
 
-            entity.Property(e => e.GenreId).ValueGeneratedNever();
             entity.Property(e => e.Name).HasMaxLength(120);
         });
 
@@ -125,7 +120,6 @@ public partial class ChinookContext : DbContext
 
             entity.HasIndex(e => e.CustomerId, "IFK_InvoiceCustomerId");
 
-            entity.Property(e => e.InvoiceId).ValueGeneratedNever();
             entity.Property(e => e.BillingAddress).HasMaxLength(70);
             entity.Property(e => e.BillingCity).HasMaxLength(40);
             entity.Property(e => e.BillingCountry).HasMaxLength(40);
@@ -148,7 +142,6 @@ public partial class ChinookContext : DbContext
 
             entity.HasIndex(e => e.TrackId, "IFK_InvoiceLineTrackId");
 
-            entity.Property(e => e.InvoiceLineId).ValueGeneratedNever();
             entity.Property(e => e.UnitPrice).HasColumnType("numeric(10, 2)");
 
             entity.HasOne(d => d.Invoice).WithMany(p => p.InvoiceLines)
@@ -166,7 +159,6 @@ public partial class ChinookContext : DbContext
         {
             entity.ToTable("MediaType");
 
-            entity.Property(e => e.MediaTypeId).ValueGeneratedNever();
             entity.Property(e => e.Name).HasMaxLength(120);
         });
 
@@ -174,7 +166,6 @@ public partial class ChinookContext : DbContext
         {
             entity.ToTable("Playlist");
 
-            entity.Property(e => e.PlaylistId).ValueGeneratedNever();
             entity.Property(e => e.Name).HasMaxLength(120);
 
             entity.HasMany(d => d.Tracks).WithMany(p => p.Playlists)
@@ -206,7 +197,6 @@ public partial class ChinookContext : DbContext
 
             entity.HasIndex(e => e.MediaTypeId, "IFK_TrackMediaTypeId");
 
-            entity.Property(e => e.TrackId).ValueGeneratedNever();
             entity.Property(e => e.Composer).HasMaxLength(220);
             entity.Property(e => e.Name).HasMaxLength(200);
             entity.Property(e => e.UnitPrice).HasColumnType("numeric(10, 2)");

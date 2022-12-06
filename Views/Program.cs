@@ -11,6 +11,7 @@ builder.Services.AddDbContext<ChinookContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Chinook")));
 builder.Services.AddSingleton<IWeatherService, BogusWeatherService>();
 builder.Services.AddSingleton<ProfileOptionsService>();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -32,5 +33,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapRazorPages();
 
 app.Run();

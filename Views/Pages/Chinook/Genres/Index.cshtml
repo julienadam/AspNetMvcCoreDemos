@@ -1,0 +1,11 @@
+﻿@page
+@model Views.Pages.Chinook.Genres.IndexModel
+
+<ul>
+    @foreach (var g in Model.Genres)
+    {
+        <li>@g.Name</li>
+    }
+</ul>
+
+<a asp-page="create">Create new</a>

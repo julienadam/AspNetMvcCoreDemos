@@ -13,6 +13,8 @@ builder.Services
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<SecurityDemoContext>();
 
+builder.Services.AddRazorPages();
+
 builder.Services.Configure<IdentityOptions>(options =>
 {
     options.Password.RequiredLength = 12;
