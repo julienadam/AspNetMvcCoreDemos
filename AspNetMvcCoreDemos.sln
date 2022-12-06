@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionDumpMiddleWareDemo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageDemo", "StorageDemo\StorageDemo.csproj", "{D5B29DB1-29FE-4C49-BF34-A660907B5EBF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityDemo", "SecurityDemo\SecurityDemo.csproj", "{D1E9F245-DBFB-405A-8248-FDE6535D815D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +56,9 @@ Global
 		{D5B29DB1-29FE-4C49-BF34-A660907B5EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5B29DB1-29FE-4C49-BF34-A660907B5EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5B29DB1-29FE-4C49-BF34-A660907B5EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1E9F245-DBFB-405A-8248-FDE6535D815D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1E9F245-DBFB-405A-8248-FDE6535D815D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1E9F245-DBFB-405A-8248-FDE6535D815D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1E9F245-DBFB-405A-8248-FDE6535D815D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
