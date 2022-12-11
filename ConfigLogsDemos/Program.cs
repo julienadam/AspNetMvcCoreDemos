@@ -1,12 +1,13 @@
 using ConfigLogsDemos.Config;
-using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-//builder.Services.Configure<CustomCommon>(
-//    builder.Configuration.GetSection(nameof(CustomCommon)));
+
+// Register options
+builder.Services.Configure<CustomCommon>(
+    builder.Configuration.GetSection(nameof(CustomCommon)));
 
 var opt = builder.Configuration.GetSection(nameof(CustomCommon)).Get<CustomCommon>();
 Console.WriteLine(opt.Abc);

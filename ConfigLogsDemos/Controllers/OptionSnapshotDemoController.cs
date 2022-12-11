@@ -5,11 +5,11 @@ using Microsoft.Extensions.Options;
 
 namespace ConfigLogsDemos.Controllers
 {
-    public class OptionDemoController : Controller
+    public class OptionSnapshotDemoController : Controller
     {
-        private readonly IOptions<CustomCommon> options;
+        private readonly IOptionsSnapshot<CustomCommon> options;
 
-        public OptionDemoController(IOptions<CustomCommon> options)
+        public OptionSnapshotDemoController(IOptionsSnapshot<CustomCommon> options)
         {
             this.options = options;
         }
