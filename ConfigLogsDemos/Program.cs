@@ -1,14 +1,24 @@
-using Microsoft.AspNetCore.Routing.Constraints;
-using Routing.Plumbing;
+using ConfigLogsDemos.Config;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//builder.Services.Configure<CustomCommon>(
+//    builder.Configuration.GetSection(nameof(CustomCommon)));
+
+var opt = builder.Configuration.GetSection(nameof(CustomCommon)).Get<CustomCommon>();
+Console.WriteLine(opt.Abc);
 
 
 var app = builder.Build();
 
+
+foreach (var (key, value) in app.Configuration.AsEnumerable())
+{
+    Console.WriteLine($"Config key {key}\t\t{value}");
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -26,24 +36,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "year month",
-    pattern: "{year}/{month}",
-    defaults: new { controller = "Home", action = "YearMonth" },
-    constraints: new { year = @"\d{4}", month = new RangeRouteConstraint(1, 12) });
-
-app.MapControllerRoute(
-    name: "isin",
-    pattern: "trade/{isin}",
-    defaults: new { controller = "Trade", action = "Make" },
-    constraints: new { isin = new IsinConstraint() });
-
-app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.MapControllerRoute(
-    name: "blog",
-    pattern: "blog/{*slug}",
-    defaults: new { controller = "Posts", action = "ViewPost"});
 
 app.Run();

@@ -14,4 +14,8 @@
     <_ContentIncludedByDefault Remove="Views\Verb\Search.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
+
 </Project>
